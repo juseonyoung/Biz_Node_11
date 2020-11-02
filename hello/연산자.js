@@ -43,4 +43,4 @@ if (!Number(어떤값)) {
   console.log(어떤값, "은 숫자가 아니다");
 }
 
-console.log("parseInt", parseInt(어떤값));
+console.log("parseInt", parseInt(어떤값)); // ??? 얘는 3이 나옴

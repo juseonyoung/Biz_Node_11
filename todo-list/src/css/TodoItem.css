@@ -1,0 +1,51 @@
+div.todo-item {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+div.todo-item:hover {
+  background: linear-gradient(to right, white, steelblue);
+  transition: 0.1s;
+}
+
+div.delete-item {
+  margin-right: 1rem;
+  color: navy;
+  font-weight: 600;
+  opacity: 0;
+}
+
+div.todo-item:hover div.delete-item {
+  opacity: 1;
+  font-size: 1.2rem;
+}
+
+div.checked {
+  text-decoration: line-through;
+  color: navy;
+}
+
+/*
+    break-all
+    word-break 문자열이 영문일 경우 어떻게 줄바꿈 할건지??
+    한글 일 경우 한글자 단위로 줄바꿈 해도 좋다 
+
+    keep-all
+    한글일 경우 단위 단위로 줄바꿈 하라
+*/
+div.todo-text {
+  flex: 1;
+  word-break: break-all;
+  text-align: left;
+}
+
+div.check-mark {
+  font-size: 1.5rem;
+  line-height: 1rem;
+  margin-left: 1rem;
+  color: orangered;
+  font-weight: 800;
+}

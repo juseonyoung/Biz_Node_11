@@ -8,7 +8,7 @@ class BBsInsert extends Component {
     b_content: "",
   };
   handleOnChange = (e) => {
-    this.setState({ [e.targer.name]: e.target.value });
+    this.setState({ [e.target.name]: e.target.value });
   };
   render() {
     const { b_writer, b_subject, b_content } = this.state;

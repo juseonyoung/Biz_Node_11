@@ -2,6 +2,7 @@
 // import express from "express"; 현재  노드제이에스가 지원하는 문법!
 const express = require("express"); // express이용해 라우터 객체 만들기
 const router = express.Router();
+const { bbsDao } = require("../models/index");
 
 router.get("/", (req, res) => {
   //res.send("반갑습니다");
@@ -17,7 +18,29 @@ router.get("/bbsList", (req, res) => {
     { id: 1, write: "이마크", subject: "게시판" },
     { id: 2, write: "정재현", subject: "게시판" },
   ];
-  res.json(list);
+
+  bbsDao.findAll({ order: ["b_date_time"] }).then((bbsList) => {
+    res.json(bbsList);
+  });
+  //res.json(list);
+});
+
+router.get("/insert", (req, res) => {
+  //api/insert
+  bbsDao
+    .create({
+      b_writer: req.query.writer || "김하성", //api/insert?writer=값
+      b_date_time: Date().toString(),
+      b_subject: "게시판작성",
+      b_content: "게시판작성 ????",
+    })
+    .then((result) => {
+      //res.json(result);
+      res.redirect("/api/bbsList");
+    })
+    .catch((err) => {
+      res.json(err);
+    });
 });
 
 module.exports = router;

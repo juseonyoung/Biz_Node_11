@@ -3,6 +3,8 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
+const seqDB = require("./models").sequelize; //현재 폴더에서 models.js가 있는지 찾는다 없으면 폴더를 찾아서 폴더안에 index.js가 있으면 그걸 임포트
+seqDB.sync();
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");

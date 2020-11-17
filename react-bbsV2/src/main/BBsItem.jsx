@@ -1,13 +1,11 @@
 import React, { Component } from "react";
-import BBsList from "./BBsList";
 import Moment from "react-moment";
 import axios from "axios";
 
 class BBsItem extends Component {
   handleClick = (id) => {
     const { fetchBBs } = this.props;
-    if (window.confirm("정말 삭제합니다!")) {
-      //delete로 요청..
+    if (window.confirm("정말 삭제합니다")) {
       axios
         .delete(`http://localhost:5000/api/delete/${id}`)
         .then((result) => {
@@ -17,13 +15,13 @@ class BBsItem extends Component {
         .catch((err) => console.log(err));
     }
   };
+
   render() {
     const { index, bbs, handleUpdate } = this.props;
     return (
       <tr>
         <td>{index + 1}</td>
         <td>{bbs.b_writer}</td>
-
         <td>
           <Moment format="YYYY-MM-DD HH:mm:ss">{bbs.b_date_time}</Moment>
         </td>

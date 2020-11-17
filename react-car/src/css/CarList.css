@@ -1,0 +1,12 @@
+.car-list {
+  width: 80%;
+  border-collapse: collapse;
+  border: none;
+  margin: 0 auto;
+}
+
+.car-list th,
+.car-list td {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}

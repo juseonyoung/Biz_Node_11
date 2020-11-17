@@ -79,7 +79,7 @@ router.get("/view/:id", (req, res) => {
     });
 });
 
-router.post("/update/:id", (req, res) => {
+router.post("/update", (req, res) => {
   const b_id = req.params.id;
   bbsDao
     .update(
@@ -88,7 +88,7 @@ router.post("/update/:id", (req, res) => {
         b_subject: req.body.b_subject,
         b_content: req.body.b_content,
       },
-      { where: { b_id: Number(b_id) } }
+      { where: { b_id: Number(req.body.b_id) } }
     )
     .then((result) => {
       res.redirect("/api/bbsList");
@@ -97,7 +97,6 @@ router.post("/update/:id", (req, res) => {
       res.json(err);
     });
 });
-
 router.delete("/delete/:id", (req, res) => {
   const b_id = req.params.id;
   bbsDao

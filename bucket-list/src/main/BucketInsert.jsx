@@ -40,6 +40,7 @@ class BuckInsert extends Component {
       <section className="w3-container-fluid">
         <div className="w3-form-control w3-margin">
           <input
+            style={{ width: "40%", border: "2px solid tomato" }}
             value={this.state.bucket_title}
             onChange={this.handleOnChange}
             onKeyPress={this.handleKeyPress}

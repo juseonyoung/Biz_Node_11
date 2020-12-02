@@ -81,7 +81,7 @@ class BucketItem extends Component {
           {bucket.b_end_check ? ( //endcheck가 true이면 끝난날짜체크아고 아니면 O 표시해라
             <Moment format="YYYY-MM-DD HH:mm:ss">{bucket.b_end_date}</Moment>
           ) : (
-            "ⓒ"
+            "완료하면 누르기"
           )}
         </td>
 

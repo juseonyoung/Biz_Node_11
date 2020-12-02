@@ -23,7 +23,8 @@ body {
 }
 
 .footer {
-  background-color: #ddd;
+  margin: 2rem auto;
+  background: linear-gradient(to right, lightgreen, lightpink);
   text-align: center;
   padding: 10px;
 }

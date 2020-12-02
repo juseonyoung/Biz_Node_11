@@ -29,6 +29,15 @@ class BucketMain extends Component {
         b_end_check: true,
         b_cancle: true,
       },
+      {
+        b_id: 2,
+        b_flag: 1,
+        b_start_date: "2020-11-24",
+        b_title: "세계여행",
+        b_end_date: "",
+        b_end_check: true,
+        b_cancle: true,
+      },
     ],
   };
 

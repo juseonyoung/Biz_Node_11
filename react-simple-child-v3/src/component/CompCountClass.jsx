@@ -6,11 +6,19 @@ import React, { Component } from "react";
 
 class CompCountClass extends Component {
   render() {
+    const [number, setNumber] = useState(0);
     // props로 전달받은 변수, 함수를 spread(전개) 하여 변수명으로 쓸 수 있도록 준비
+
+    const onChange = (e) => {
+      setInputValue(e.target.value);
+
+      setNumber(Number(e.target.value));
+    };
+
     const { countArg } = this.props;
     return (
       <div>
-        <h3>카운트: {countArg}</h3>
+        <input onChange={onChange} value={countArg} />
       </div>
     );
   }
